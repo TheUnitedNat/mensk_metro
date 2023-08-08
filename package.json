@@ -1,0 +1,11 @@
+{
+  "name": "mensk_metro",
+  "version": "1.0.0",
+  "description": "mensk metro map",
+  "main": "draw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sslavboi",
+  "license": "ISC"
+}
