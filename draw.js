@@ -1,4 +1,4 @@
-class st_first_line {
+class station {
     constructor(x, y, radius, first_ang, sec_ang, station_name) {
         this.x = x;
         this.y = y;
@@ -7,10 +7,10 @@ class st_first_line {
         this.sec_ang = sec_ang;
         this.station_name = station_name;
     }
-    get f_draw() {
+    f_draw() {
         return this.line_draw();
     }
-    get f_text() {
+    f_text() {
         return this.line_text();
     }
     line_text() {
@@ -37,25 +37,48 @@ class st_first_line {
 
     }
 }
+var stationsData = [
+    {
+        x: 50,
+        y: 50,
+        radius: 5,
+        first_ang: 360,
+        sec_ang: 360,
+        station_name: '12312'
+    }
+]
+
+var stationsInstances = [ station ];
+
+function generateStation() {
+    return Station(x, y, radius, first_ang, sec_ang, station_name)
+}
+station.forEach(station => {
+    stationsData.push(generateStation(station))
+})
+let i = 0;
+while (i < stationsData.length) { 
+    stationsData[i].f_draw();
+    stationsData[i].f_text();
+    i++;
+}
 function draw() {
     var canvas = document.getElementById("canvas");
     if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
         
         ctx.beginPath();
-        p1 = new st_first_line(50, 50, 5, 0, 360, "Каменная горка");
-        p1.f_draw;
-        p1.f_text;
-        p2 = new st_first_line(100, 100, 5, 0, 360, "Кунцаўшчына");
+        //p1 = new station(50, 50, 5, 0, 360, "Каменная горка");
+        p2 = new station(100, 100, 5, 0, 360, "Кунцаўшчына");
         p2.f_draw;
-        p2  .f_text;
-        p3 = new st_first_line(150, 150, 5, 0, 360, "Спартыўная");
+        p2.f_text;
+        p3 = new station(150, 150, 5, 0, 360, "Спартыўная");
         p3.f_draw;
         p3.f_text;
-        p4 = new st_first_line(200, 200, 5, 0, 360, "Пушкінская");
+        p4 = new station(200, 200, 5, 0, 360, "Пушкінская");
         p4.f_draw;
         p4.f_text;
-        p5 = new st_first_line(250, 250, 5, 0, 360, "Маладзёжная");
+        p5 = new station(250, 250, 5, 0, 360, "Маладзёжная");
         p5.f_draw;
         p5.f_text;
         
